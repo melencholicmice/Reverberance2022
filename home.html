@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverberance</title>
+    <link rel="stylesheet" href="./home.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./dist/loading-bar.css"/> -->
+    <!-- <script type="text/javascript" src="./dist/loading-bar.js" defer></script> -->
+</head>
+
+<body>
+    <!---------------------------------navbar starts here--------------------------------->
+    <nav>
+        <div class="logo">
+            <span id="logo">Reverberance</span>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./event_points.html">Standing</a></li>
+            <li><a href="./people.html">Team</a></li>
+        </ul>
+    </nav>
+    <!---------------------------------navbar ends here--------------------------------->
+
+    <!-- -------------------------banner elements----------------------------------- -->
+    <section class="banner">
+        <div class="first-div">
+            <h1 class="reverberance-title disp-flx-ctr">
+                Reverberance 2022
+            </h1>
+            <p class="reverberance-description disp-flx-ctr">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, laudantium dolor? Id rerum accusantium
+                voluptates. Aliquid eius porro repellat ex.
+            </p>
+        </div>
+        <div class="second-div mb-clm">
+            <div>
+                <img src="./logo.jpg" alt="" class="img-box hidden1">
+                <div class="description hidden2">
+                    <h1>Second Div Tittle</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore explicabo, dicta, magni blanditiis
+                        eius soluta ex quis fuga cum odio est officiis facere?</p>
+                </div>
+            </div>
+        </div>
+        <div class="third-div mb-clm">
+            <div>
+                <img src= "./logo.jpg"  alt="" class="img-box hidden2">
+                <div class="description hidden1">
+                    <h1>Second Div Tittle</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore explicabo, dicta, magni blanditiis
+                        eius soluta ex quis fuga cum odio est officiis facere?</p>
+                </div>
+            </div>
+        </div>
+        <div class="forth-div mb-clm ">
+            <div>
+                <img src="./logo.jpg" alt=" " class="img-box hidden1">
+                <div class="description hidden2">
+                    <h1>Second Div Tittle</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore explicabo, dicta, magni blanditiis
+                        eius soluta ex quis fuga cum odio est officiis facere?</p>
+                </div>
+            </div>
+        </div>
+        <div class="fifth-div mb-clm">
+            <div>
+                <img src="./logo.jpg" alt="" class="img-box hidden2">
+                <div class="description hidden1">
+                    <h1>Second Div Tittle</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore explicabo, dicta, magni blanditiis
+                        eius soluta ex quis fuga cum odio est officiis facere?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------banner elements ends here------------------------------------->
+
+
+    <footer>
+        <ul class="footer_social_icon">
+            <li><a href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li><a href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            <li><a href="#">
+                    <ion-icon name="globe-outline"></ion-icon>
+                </a></li>
+            <!-- <li><a href="#"></a></li> -->
+        </ul>
+        <ul class="footer_menu">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./event_points.html">Standing</a></li>
+            <li><a href="./people.html">Team</a></li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas non doloremque!</p>
+    </footer>
+
+
+
+
+
+    <!--javascript  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+
+        const hiddenele = document.querySelectorAll('.hidden1');
+        const hiddenele2 = document.querySelectorAll('.hidden2');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+                // else {
+                //     entry.target.classList.remove('show');
+                // }
+            })
+        })
+        const observer2 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+                // else {
+                //     entry.target.classList.remove('show');
+                // }
+            })
+        })
+        hiddenele.forEach((ele) => observer.observe(ele));
+        hiddenele2.forEach((ele) => observer2.observe(ele));
+
+        // for navbar 
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+
+        hamburger.addEventListener('click', () => {
+            //Animate Links
+            navLinks.classList.toggle("open");
+            links.forEach(link => {
+                link.classList.toggle("fade");
+            });
+
+            //Hamburger Animation
+            hamburger.classList.toggle("toggle");
+        });
+        //for navbar ends
+   
+    </script>
+    <!--javascript  -->
+</body>
+
+</html>

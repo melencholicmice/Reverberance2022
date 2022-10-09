@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Yatra+One');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body {
+    background: #c3f73a;
+}
+
+/* ---------------------navbar styles start here-------------------------------------- */
+nav{
+    height: 4rem;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo span{
+    color: #fff;
+    font-size: 48px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 50vw;
+    /* padding: 0 0.2vw; */
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: #fff;
+    padding: 1px;
+}
+.nav-links li a:hover {
+    color: orange;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: relativeS;
+        z-index: 3;
+    }
+    .logo{
+        visibility: hidden;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        padding: 2px;
+        cursor: pointer;
+        right: 5%;
+        top: 47%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+        /* border: 2px solid red; */
+    }
+
+    .hamburger:hover{
+        border: 2px solid orange;
+
+
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* ---------------------navbar styles ends here-------------------------------------- */
+
+.our_team .team_member .member_img .social_media .fab{
+    color: orange;
+}
+
+
+.wrapper {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.wrapper h1 {
+    font-family: 'Yatra One', cursive;
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 25px;
+
+}
+
+.our_team .overall_coordinator .team_member {
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    background: #fff;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.our_team {
+    width: auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.our_team .team_member {
+    width: 250px;
+    height: 300px;
+    margin: 15px;
+    background: #fff;
+    padding: 20px 10px;
+    border-radius: 15px;
+}
+
+.our_team .team_member .member_img {
+    background: #e9e5fa;
+    max-width: 190px;
+    width: 100%;
+    height: 190px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.our_team .team_member .member_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.our_team .team_member h3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    margin: 15px 0 0px;
+}
+
+.our_team .team_member span {
+    font-size: 10px;
+}
+
+.our_team .team_member p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.our_team .team_member .member_img .social_media {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.65);
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+.our_team .team_member .member_img .social_media .item {
+    margin: 0 10px;
+}
+
+.our_team .team_member .member_img .social_media .fab {
+    color: orange;
+    font-size: 20px;
+}
+
+.our_team .team_member .member_img:hover .social_media {
+    transform: scale(1);
+}
+
+
+
+/* -----------------------footer styles start here --------------------- */
+footer{
+    /* position: absolute; */
+    /* bottom: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: orange;
+    padding: 20px 50px;
+}
+
+footer  .footer_social_icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    
+}
+footer ul{
+    list-style: none;
+}
+footer .footer_social_icon li a{
+    font-size: max(2vh ,2vw,40px);
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    
+}
+footer .footer_menu{
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+
+
+footer .footer_menu  li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+footer .footer_menu  li a:hover{
+opacity: 1;
+}
+
+footer .footer_social_icon li a:hover{
+    transform: translateY(-15px);
+}
+
+footer p{
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+}
+
+/* @media(prefers-reduced-motion){ */
+    .hidden1{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition: all 1.25s;
+    
+    }
+    .hidden2{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+        transition: all 1.25s;
+    
+    }
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    
+    }
+
+
+/*---------------------------- footer styles end here ------------------------------------*/
+ 
