@@ -18,7 +18,13 @@ var swiper = new Swiper(".slide-content", {
 
     breakpoints:{
         0: {
-            slidesPerView: 1,
+          // direction: 'vertical',
+          // mousewheelControl: true,
+          slidesPerView: 1,
+          pagination: {
+            dynamicBullets: true,
+          },
+            
         },
         600: {
             slidesPerView: 2,

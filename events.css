@@ -392,7 +392,28 @@ nav{
   background-color: orange;
 }
 
+@media screen and (max-width: 800px){
+    .slide-container {
+        max-width: 1440px;
+        width: 100%;
+        padding: 40px 0;
+        /* border: 2px solid red; */
+        height: 84vh;
+        margin-top: 50px;
+    }
 
+    .card .name{
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 2px;
+        letter-spacing: 1.25px;
+    }
+}
+
+.description .button_wrapper{
+    display: flex;
+    justify-content: space-around;
+}
 
 
 /* <!----------------------------- card styles ends here--------------------------------- --> */
